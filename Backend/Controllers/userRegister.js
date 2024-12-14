@@ -1,54 +1,6 @@
 
 
 
-
-
-// import userModel from "../Model/userModel.js";
-
-// export const registerController = async (req, res) => {
-//   try {
-//     let { name, email, phone, city } = req.body;
-//     console.log(name, email, phone, city);
-//     if (!name) {
-//       return res.status(400).send({ message: "Name is Required" });
-//     }
-//     if (!email) {
-//       return res.status(400).send({ message: "Email is Required" });
-//     }
-//     if (!phone) {
-//       return res.status(400).send({ message: "Phone is Required" });
-//     }
-//     if (!city) {
-//       return res.status(400).send({ message: "City is Required" });
-//     }
-
-//     const user = await new userModel({
-//       name,
-//       email,
-//       phone,
-//       city,
-//     }).save();
-
-//     res.status(201).send({
-//       success: true,
-//       message: "Submitted Successfully",
-//       user,
-//     });
-//   } catch (error) {
-//     console.log(error);
-//     res.status(500).send({
-//       success: false,
-//       message: "Error in registration",
-//       error,
-//     });
-//   }
-// };
-
-
-
-
-
-
 import userModel from "../Model/userModel.js";
 
 export const registerController = async (req, res) => {

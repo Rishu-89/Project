@@ -21,9 +21,9 @@ export const reviewController=async(req,res)=>{
       case photo && photo.size > 5000000:
         return res
           .status(500)
-          .send({ error: "photo is Required and should be less then 1mb" });
+          .send({ error: "photo is Required and should be less then 5mb" });
     }
-    const review = new reviewSchema({ name, description,destination});
+    const review = new reviewModel({ name, description,destination});
 
     if (photo) {
    
@@ -48,36 +48,6 @@ export const reviewController=async(req,res)=>{
 
 }
 
-
-
-
-
-
-
-// export const getReview=async(req,res)=>{
-
-//   try {
-//     const review = await reviewModel
-//       .find({})
-      
-      
-      
-//       .sort({ createdAt: -1 });
-//     res.status(200).send({
-//       success: true,
-      
-//       message: "ALl Review ",
-//       review,
-//     });
-//   } catch (error) {
-//     console.log(error);
-//     res.status(500).send({
-//       success: false,
-//       message: "Erorr in getting Review",
-//       error: error.message,
-//     });
-//   }
-// }
 
 
 export const getReview = async (req, res) => {

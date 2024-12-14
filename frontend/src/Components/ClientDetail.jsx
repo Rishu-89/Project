@@ -10,9 +10,9 @@ const ClientDetail = () => {
   useEffect(() => {
     const fetchClients = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/api/v1/auth/getUsers');  // API endpoint to get all users
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/v1/auth/getUsers`);  // API endpoint to get all users
         if (response.data.success) {
-          setClients(response.data.users);  // Store users in the state
+          setClients(response.data.users); 
         } else {
           setError("Error fetching clients.");
         }
@@ -20,7 +20,7 @@ const ClientDetail = () => {
         console.error("Error fetching clients:", err);
         setError("Error fetching clients.");
       } finally {
-        setLoading(false);  // Set loading to false once data is fetched
+        setLoading(false);  
       }
     };
 
@@ -28,11 +28,11 @@ const ClientDetail = () => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;  // Display loading message while data is being fetched
+    return <div>Loading...</div>;  
   }
 
   if (error) {
-    return <div>{error}</div>;  // Display error message if something went wrong
+    return <div>{error}</div>;  
   }
 
   return (

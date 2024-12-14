@@ -28,7 +28,7 @@ app.use(morgan('dev'));
 
 app.use('/api/v1/auth', userRoutes);
 app.use('/api/v1/review', reviewRoutes); 
-app.use('/api/v1/projects', projectRoutes);
+app.use('/api/v1/project', projectRoutes);
 app.use('/api/v1/subscribers', subscribersRoutes);
 
 app.get('/', (req, res) => {

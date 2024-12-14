@@ -19,10 +19,10 @@ export const projectController=async(req,res)=>{
       case !location:
         return res.status(500).send({ error: "location is Required" });
       
-      case photo && photo.size > 5000000:
+      case photo && photo.size > 50000000:
         return res
           .status(500)
-          .send({ error: "photo is Required and should be less then 1mb" });
+          .send({ error: "photo is Required and should be less then 5mb" });
     }
     const project = new projectModel({name,projectName,location});
 
@@ -50,33 +50,6 @@ export const projectController=async(req,res)=>{
 }
 
 
-
-
-
-
-
-// export const getProject=async(req,res)=>{
-
-//   try {
-//     const projects = await projectModel
-//       .find({})  
-//       res.set("Content-type", projects.photo.contentType);
-//     res.status(200).send({
-//       success: true,
-   
-//       message: "ALl Project ",
-//       projects,
-//       images:projects.photo.data
-//     });
-//   } catch (error) {
-//     console.log(error);
-//     res.status(500).send({
-//       success: false,
-//       message: "Erorr in getting project",
-//       error: error.message,
-//     });
-//   }
-// }
 
 
 

@@ -21,7 +21,7 @@ const ClientMag = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Resetting any previous error or success message
+    
     setErrorMessage("");
     setSuccessMessage("");
 
@@ -40,7 +40,7 @@ const ClientMag = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/v1/review/create-review", // Ensure correct backend URL
+        `${import.meta.env.VITE_API_URL}/api/v1/review/create-review`, 
         formData,
         {
           headers: {

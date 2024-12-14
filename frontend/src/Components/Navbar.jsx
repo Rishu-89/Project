@@ -1,8 +1,8 @@
 
 
 import React, { useState } from "react";
-import { Link } from "react-router-dom"; // Import Link for routing
-import LogoImage from "../assests/logo.svg"; // Import your logo image
+import { Link } from "react-router-dom"; 
+import LogoImage from "../assests/logo.svg"; 
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false); // State for mobile menu toggle

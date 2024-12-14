@@ -10,7 +10,7 @@ import { getReview, reviewController } from "../Controllers/review.js";
 let router=express.Router();
 
 
-router.post('/create-review',requireSignIn,formidable(),reviewController);
+router.post('/create-review',formidable(),reviewController);
 
 router.get('/get-review',getReview)
 

@@ -19,29 +19,27 @@ import AdminDashboard from "./Components/AdminDashboard.jsx";
 
 // ProtectedRoute Component
 const ProtectedRoute = ({ children }) => {
-  const token = localStorage.getItem("token"); // Check for token in localStorage
+  const token = localStorage.getItem("token"); 
   if (!token) {
-    return <Navigate to="/admin-login" />; // Redirect to login if no token
+    return <Navigate to="/admin-login" />; 
   }
   return children;
 };
 
 const App = () => {
-  const location = useLocation(); // Get the current route
+  const location = useLocation(); 
 
-  // Check if the current route is either AdminLogin or AdminDashboard
   const isAdminPage = location.pathname === "/admin-login" || location.pathname === "/dashboard";
 
   return (
     <>
-      {/* Navbar is always visible */}
+     
     
 
       <Routes>
-        /* Public Route for Admin Login */
+       
         <Route path="/admin-login" element={<AdminLogin />} />
-        
-        /* Protected Route for Admin Dashboard */
+    
         <Route
           path="/dashboard"
           element={
@@ -55,7 +53,6 @@ const App = () => {
        
       </Routes>
 
-      /* Show these sections only if we are not on admin login or dashboard */
       {!isAdminPage && (
         <>
         <Navbar/>

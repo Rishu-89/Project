@@ -9,8 +9,8 @@ const OurProject = () => {
 
   const getAllProjects = async () => {
     try {
-      const { data } = await axios.get("http://localhost:8080/api/v1/projects/getProjects");
-      setProjects(data.projects); // Assuming `projects` is an array in the API response
+      const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/api/v1/project/getProjects`);
+      setProjects(data.projects); 
       setLoading(false);
     } catch (err) {
       setError("Error fetching projects");
