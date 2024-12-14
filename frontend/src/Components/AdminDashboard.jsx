@@ -35,7 +35,7 @@ const AdminDashboard = () => {
     // Remove token from localStorage
     localStorage.removeItem("token");
     // Redirect user to the login page
-    window.location.href = "/login"; 
+    window.location.href = "/admin-login"; 
   };
 
 
