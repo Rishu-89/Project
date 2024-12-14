@@ -33,10 +33,9 @@ const App = () => {
 
   return (
     <>
-     
-    
+ 
 
-      <Routes>
+     <Routes>
        
         <Route path="/admin-login" element={<AdminLogin />} />
     
